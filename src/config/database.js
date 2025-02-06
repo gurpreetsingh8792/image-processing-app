@@ -14,6 +14,7 @@ db.serialize(() => {
     `CREATE TABLE IF NOT EXISTS requests (
         id TEXT PRIMARY KEY,
         status TEXT CHECK( status IN ('Pending', 'In Progress', 'Completed', 'Failed') ),
+        webhook_url TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`,
     (err) => {

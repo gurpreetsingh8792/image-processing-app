@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "32d913f9-38cc-48a4-8e17-100e7b723118",
+		"name": "Image-processing-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37863995"
+	},
+	"item": [
+		{
+			"name": "Upload CSV File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/image-processing-app/input.csv"
+						},
+						{
+							"key": "webhook_url",
+							"value": "\thttps://webhook.site/ad23f911-0f06-4978-b769-ae49ce729375",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Upload CSV File",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/image-processing-app/input.csv"
+								},
+								{
+									"key": "webhook_url",
+									"value": "\thttps://webhook.site/ad23f911-0f06-4978-b769-ae49ce729375",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-qFKfzJKpk1W2ic8Q/QEWR1gnYmY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Feb 2025 16:41:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requestId\": \"b1f2c3e6-e4a4-4744-9039-f997d04b8660\",\n    \"message\": \"CSV received and processing started.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Status check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/status/b1f2c3e6-e4a4-4744-9039-f997d04b8660",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"status",
+						"b1f2c3e6-e4a4-4744-9039-f997d04b8660"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/status/b1f2c3e6-e4a4-4744-9039-f997d04b8660",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"status",
+								"b1f2c3e6-e4a4-4744-9039-f997d04b8660"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1175"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"497-aSqnbg1dwF4PiW8OeFZanAATIiM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Feb 2025 16:42:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requestId\": \"b1f2c3e6-e4a4-4744-9039-f997d04b8660\",\n    \"status\": \"Completed\",\n    \"images\": [\n        {\n            \"input_image_url\": \"https://www.livemint.com/lm-img/img/2024/06/18/600x338/laptoppppp_cleanup_1718705991705_1718706003867.PNG\",\n            \"output_image_url\": \"http://localhost:3000/processed/53.jpg\"\n        },\n        {\n            \"input_image_url\": \"https://images.gizbot.com/webp/ph-big/2025/02/infinix-smart-9-hd-now-up-for-grabs-in-india-just-rs-6699_173865214040.jpg\",\n            \"output_image_url\": \"http://localhost:3000/processed/54.jpg\"\n        },\n        {\n            \"input_image_url\": \"https://images.gizbot.com/webp/ph-big/2025/02/infinix-smart-9-hd-now-up-for-grabs-in-india-just-rs-6699_173865213910.jpg\",\n            \"output_image_url\": \"http://localhost:3000/processed/55.jpg\"\n        },\n        {\n            \"input_image_url\": \"https://5.imimg.com/data5/SELLER/Default/2023/3/296178163/GX/GL/SD/186724856/vivo-mobile-phone-1000x1000.jpg\",\n            \"output_image_url\": \"http://localhost:3000/processed/56.jpg\"\n        },\n        {\n            \"input_image_url\": \"https://www.techtarget.com/rms/onlineimages/hp_elitebook.jpg\",\n            \"output_image_url\": \"http://localhost:3000/processed/57.jpg\"\n        },\n        {\n            \"input_image_url\": \"https://www.digitaltrends.com/wp-content/uploads/2024/07/surface-laptop-7-06.jpg\",\n            \"output_image_url\": \"http://localhost:3000/processed/58.jpg\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

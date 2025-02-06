@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/processed", express.static("processed"));
+app.use("/output", express.static("output"));
 
 app.use("/api", requestRoutes);
 

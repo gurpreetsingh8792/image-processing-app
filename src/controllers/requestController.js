@@ -12,6 +12,7 @@ const uploadCSV = (req, res) => {
   if (!req.file) return res.status(400).json({ error: "CSV file is required" });
 
   const requestId = uuidv4();
+  const webhookUrl = req.body.webhook_url || null;
   const filePath = req.file.path;
   const newFilePath = path.join(
     __dirname,
@@ -20,10 +21,10 @@ const uploadCSV = (req, res) => {
   );
 
   fs.renameSync(filePath, newFilePath);
-
-  db.run(`INSERT INTO requests (id, status) VALUES (?, ?)`, [
+  db.run(`INSERT INTO requests (id, status, webhook_url) VALUES (?, ?, ?)`, [
     requestId,
     "Pending",
+    webhookUrl,
   ]);
 
   fs.createReadStream(newFilePath)
